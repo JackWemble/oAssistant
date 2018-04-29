@@ -12,10 +12,9 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-	if (message.content === "$ping") {
+	if (message.content === "status") {
 		message.channel.send({
 			embed: {
-				"title": "Status",
 				"url": "",
 				"color": 1234567,
 				"footer": {
