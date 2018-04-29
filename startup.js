@@ -33,14 +33,11 @@ client.on('message', message => {
 	if (message.content == '-help') {
 		message.channel.send({
 			embed: {
+				"title": "Help Menu",
 				"url": "",
 				"color": 1234567,
 				"footer": {
 					"text": "© Jack Wemble"
-					"author": {
-						"name": "Help",
-						"icon_url": client.user.avatarURL
-					},
 				},
 				"fields": [{
 						"name": "-help",
