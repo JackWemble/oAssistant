@@ -4,7 +4,7 @@ client.on('ready', () => {
 	console.log("Logged in successfully.");
 	client.user.setPresence({
 		game: {
-			name: '/help for help',
+			name: '-help for help',
 			type: 0
 		}
 	});
