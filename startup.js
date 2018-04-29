@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const prefix = .
 client.on('ready', () => {
 	console.log("Logged in successfully.");
 	client.user.setPresence({
@@ -12,7 +13,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-	if (message.content === "status") {
+	if (message.content === prefix + "status") {
 		message.channel.send({
 			embed: {
 				"url": "",
@@ -32,7 +33,7 @@ client.on('message', message => {
 var randomValue;
 
 client.on('message', msg => {
-	if (msg.content == '$roulette') {
+	if (msg.content == prefix + 'roulette') {
 		if (!(randomValue >= 1 && randomValue <= 6)) {
 			randomValue = 6;
 		}
