@@ -12,6 +12,24 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+	if (message.content === "-status") {
+		message.channel.send({
+			embed: {
+				"title": "Online",
+				"url": "",
+				"color": 1234567,
+				"footer": {
+					"text": "© Jack Wemble"
+				},
+				"fields": [{
+					"value": ":alarm_clock: " + Math.ceil(client.ping) + " ms"
+				}]
+			}
+		})
+	}
+});
+
+client.on('message', message => {
 	if (message.content == '-help') {
 		message.channel.send({
 			embed: {
