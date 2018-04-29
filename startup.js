@@ -2,7 +2,13 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 client.on('ready', () => {
 	console.log("Logged in successfully.");
-	client.user.setGame('$help for help');console.log("Set status.");
+	client.user.setPresence({
+		game: {
+			name: '$help for help',
+			type: 0
+		}
+	});
+	console.log("Set status.");
 });
 
 client.on('message', message => {
@@ -16,13 +22,14 @@ client.on('message', message => {
 					"text": "© Jack Wemble"
 				},
 				"fields": [{
-					"name": "Online"
+					"name": "Online",
 					"value": ":alarm_clock: " + Math.ceil(client.ping) + " ms"
 				}]
 			}
 		})
 	}
 });
+
 var randomValue;
 
 client.on('message', msg => {
@@ -47,4 +54,4 @@ client.on('message', msg => {
 });
 
 
-client.login(process.env.BOT_TOKEN);
+client.login("NDM5OTI0NjEyOTAyNTUxNTUy.DcdJUA.Cfj4qlHlynCbEziaWmV29S9QIz4");
