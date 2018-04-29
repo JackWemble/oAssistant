@@ -12,6 +12,37 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+	if (message.content == '-help') {
+		message.channel.send({
+			embed: {
+				"url": "",
+				"color": 1234567,
+				"footer": {
+					"text": "© Jack Wemble"
+					"author": {
+						"name": "Help",
+						"icon_url": client.user.avatarURL
+					},
+				},
+				"fields": [{
+						"name": "-help",
+						"value": "Show the help menu."
+					},
+					{
+						"name": "-status",
+						"value": "Check the stauts of the bot."
+					},
+					{
+						"name": "-roulette",
+						"value": "Play roulette."
+					}
+				]
+			}
+		})
+	}
+});
+
+client.on('message', message => {
 	if (message.content === "-status") {
 		message.channel.send({
 			embed: {
