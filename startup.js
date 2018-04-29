@@ -6,22 +6,23 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === "$status") {
-	message.channel.send({embed: {
-    "title": "Bot Status",
-    "url": "",
-    "color": 1234567,
-      "footer": {
-        "text": "© Jack Wemble"
-      },
-    "fields": [
-      {
-        "name": "Ping Result",
-        "value": ":alarm_clock: "+ client.ping + " ms"
-      }]
-	}})
-}});	
-
+	if (message.content === "$ping") {
+		message.channel.send({
+			embed: {
+				"title": "Status",
+				"url": "",
+				"color": 1234567,
+				"footer": {
+					"text": "© Jack Wemble"
+				},
+				"fields": [{
+					"name": "Online"
+					"value": ":alarm_clock: " + Math.ceil(client.ping) + " ms"
+				}]
+			}
+		})
+	}
+});
 var randomValue;
 
 client.on('message', msg => {
