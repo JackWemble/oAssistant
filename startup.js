@@ -89,7 +89,7 @@ client.on('message', msg => {
 			randomValue = 6;
 			const member = msg.guild.member(msg.author);
 			member.kick();
-			msg.author.sendMessage("You shot yourself, good job.");
+			msg.author.sendMessage("Good job, you shot yourself. Join back with this invite.\nhttps://discord.gg/Sh4nPKJ");
 		} else {
 			msg.channel.send(':gun: *Click*');
 			randomValue = randomValue - 1;
