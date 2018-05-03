@@ -31,11 +31,11 @@ client.on('message', message => {
 
 client.on('message', message => {
   if (message.content == '-kick') {
-    if (!message.member.roles.some(r => ["Administrator", "Moderator"])) {
+    if (!message.member.roles.some(r=>["Administrator", "Moderator", "Founder", "Support"].includes(r.name)) ) {
       let kickMember = message.mentions.members.first();
       let adminMember = msg.guild.member(msg.author);
-      kickMember.kick();
       message.channel.send(adminMember + " has kicked " + kickMember + ".");
+      kickMember.kick();
     } else {
       message.channel.send("An error has occured:\n`You do not have the right permission to kick, or that player is not kickable.`");
     }
