@@ -32,7 +32,7 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.content == '-kick') {
     if (!message.member.roles.some(r=>["Administrator", "Moderator", "Founder", "Support"].includes(r.name)) ) {
-      let kickMember = message.mentions.members.first();
+      let kickMember = msg.mentions.members.first();
       let adminMember = msg.guild.member(msg.author);
       message.channel.send(adminMember + " has kicked " + kickMember + ".");
       kickMember.kick();
