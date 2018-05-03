@@ -37,7 +37,7 @@ client.on('message', message => {
       message.channel.send(adminMember + " has kicked " + kickMember + ".");
       kickMember.kick();
     } else {
-      message.channel.send("An error has occured:\n`You do not have the right permission to kick, or that player is not kickable.`");
+      message.channel.send("An error has occured:\n`You do not have the right permission to kick, that player is not kickable, or you didn't tag anyone.`");
     }
   }
 });
