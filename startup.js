@@ -1,11 +1,5 @@
 //---------------------------------------------------------------------------\\
 
-var Emitter = require('emitter-js');
-var listeners = new Emitter();
-listeners.setMaxListeners(20)
-
-//---------------------------------------------------------------------------\\
-
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const mysql = require("mysql");
